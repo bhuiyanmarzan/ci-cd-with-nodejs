@@ -33,4 +33,4 @@ jobs:
             #pm2 restart your-app-name || pm2 start your-app-name --name "your-app-name"
 
             # Start the application using Docker Compose
-            docker compose up -d --build
+            sudo docker compose up -d --build
