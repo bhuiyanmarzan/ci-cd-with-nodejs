@@ -30,4 +30,7 @@ to stop
 ```bash
 docker compose down
 ```
-
+befor initialize git add gitignore file for this project
+```bash
+npx gitignore Node
+```
