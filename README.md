@@ -79,3 +79,41 @@ curl http://localhost:8080
     - Save rules.
 
 Verification: Re-run curl http://3.0.18.186:8080 from your local machine.
+
+Now some changes to code and push it github then i server and make sure you are in project folder
+```bash
+git pull
+```
+again run build command
+```bash
+docker compose up -d --build
+```
+now see the browser you can see the changes
+```bash
+http://3.0.18.186:8080 
+```
+
+## now automate this using ci-cd
+## generate new ssh ky
+## set publick key in server
+```bash
+ls -a
+```
+you can see like this:
+```bash
+.   .bash_history  .bashrc  .profile  .sudo_as_admin_successful
+..  .bash_logout   .cache   .ssh      ci-cd-with-nodejs
+```
+again
+```bash
+ls
+```
+now you see this file
+```bash
+authorized_keys
+```
+open this file into vim
+```bash
+vim authorized_keys
+```
+now paste here pub key

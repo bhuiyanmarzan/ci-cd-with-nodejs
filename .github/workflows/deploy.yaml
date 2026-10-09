@@ -1,0 +1,39 @@
+name: deploy nodejs application in production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+        script: |
+          # Navigate to the application directory
+          cd ci-cd-with-nodejs
+
+          # Pull the latest changes from the main branch
+          # git pull origin main
+          git pull
+
+          # Install dependencies
+          npm install
+
+          # Build the application (if applicable)
+          # npm run build
+
+          # Restart the application (using PM2 or any process manager)
+          #pm2 restart your-app-name || pm2 start your-app-name --name "your-app-name"
+
+          # Start the application using Docker Compose
+          docker-compose up -d --build
