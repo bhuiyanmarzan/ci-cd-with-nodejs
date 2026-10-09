@@ -34,3 +34,48 @@ befor initialize git add gitignore file for this project
 ```bash
 npx gitignore Node
 ```
+## Server setup
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
+then install docker and check docker install type
+```bash
+docker
+```
+check current directory
+```bash
+pwd
+```
+Output:
+```bash
+/root
+```
+git clone all the file from the github
+```bash
+git clone 
+```
+
+# AWS EC2 & Docker Node.js Application Troubleshooting Guide
+
+```bash
+curl http://localhost:8080
+```
+
+1. Open the AWS Management Console and navigate to EC2.
+
+2. Select your running instance and click the Security tab.
+
+3. Click on the attached Security Group.
+
+4. Click Edit inbound rules and add a rule with the following configuration:
+
+    - Type: Custom TCP
+
+    - Port range: 8080
+
+    - Source: 0.0.0.0/0 (Anywhere IPv4) or your specific IP
+
+    - Save rules.
+
+Verification: Re-run curl http://3.0.18.186:8080 from your local machine.
